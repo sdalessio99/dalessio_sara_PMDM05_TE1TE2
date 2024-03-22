@@ -7,8 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- se usa una lista con *ngFor para recorrer el array y crear un checklist para cada elemento del array -->
   <ion-list *ngFor="let noticia of arrayArticulos">
     <ion-item>
+      <!-- se usa ion-checkbox para detectar que noticias se quieren añadir o quitar del array -->
+      <!-- cuando detecta un cambio, se lanza el metodo cambiosNoticia y se le pasa la noticia -->
+      <!-- tambien se verifica con el metodo checkNoticia que si se ha borrado desde la pestaña de leer, se desmarque automaticamente -->
       <ion-checkbox slot="start" [checked]="checkNoticia(noticia)" (ionChange)="cambiosNoticia($event, noticia)"></ion-checkbox>
       <ion-label>
         <h2>{{noticia.source.name}}</h2>

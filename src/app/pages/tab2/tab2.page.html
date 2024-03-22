@@ -6,6 +6,7 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- se usa una lista con un *ngFor para recorrer el array gestionado por el servicio y se crea un componente noticia por cada elemento del array -->
 <ion-content [fullscreen]="true">
   <ion-list *ngFor="let noticia of gestionNoticias.getNoticia()">
     <app-noticia [articulo]="noticia"></app-noticia>

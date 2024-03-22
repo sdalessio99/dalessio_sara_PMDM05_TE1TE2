@@ -5,7 +5,7 @@ import { Article } from '../interfaces/interfaces';
   providedIn: 'root'
 })
 export class GestionNoticiasService {
-
+  //se inicializa el array para poder usarlo en los metodos del servicio
   private arrayNoticias: Article[] = []
 
   constructor() { }
@@ -25,6 +25,8 @@ export class GestionNoticiasService {
     this.arrayNoticias.push(noticia);
   }
 
+  //metodo para buscar una noticia que se pasa como parametro, y devuelve su indice
+  //se va a usar para poder borrar las noticias y comprobar que no se añadan duplicados
   buscarNoticia(noticia: Article) {
     //buscar una noticia con el dato pasado por parametro
     let articuloEncontrado: any = this.arrayNoticias.find(function(articulo) {
@@ -36,7 +38,7 @@ export class GestionNoticiasService {
     return indice;
   }
 
-  //metodo para quitar una noticia del array
+  //metodo para quitar una noticia del array, se busca y se comprueba que existe para que no haya problemas al borrarlo o que no borre la equivocada
   borrarNoticia(noticia: Article) {
     //buscar la noticia con el metodo buscarNoticia
     let indice: number = this.buscarNoticia(noticia);

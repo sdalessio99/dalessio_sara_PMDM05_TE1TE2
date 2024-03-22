@@ -16,10 +16,13 @@ export class NoticiaComponent  implements OnInit {
 
   ngOnInit() {}
 
+  //metodo onClick para presentar la alerta cuando se pulsa el icono de la basura en el ion-card
   onClick() {
     this.presentarAlertaBorrar();
   }
 
+  //metodo para presentar y gestionar la alerta de confirmacion de borrado, al darle al boton okay lanza el metodo borrar del servicio
+  //y pasa como parametro la noticia de la ion-card actual
   async presentarAlertaBorrar() {
     const alert = await this.alerta.create({
     header: 'Confirmar',
