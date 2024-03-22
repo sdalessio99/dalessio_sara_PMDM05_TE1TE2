@@ -1,0 +1,14 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>{{articulo.source.name}}</ion-card-subtitle>
+    <ion-card-title>{{articulo.title}}</ion-card-title>
+    <ion-img [src]="articulo.urlToImage"></ion-img>
+  </ion-card-header>
+  <ion-card-content>
+    {{articulo.content}}
+  </ion-card-content>
+  <ion-item>
+    <ion-icon slot="end" name="trash-outline" (click)="onClick()"></ion-icon>
+    <ion-label><a [href]="articulo.url" target="_blank">Leer</a></ion-label>
+  </ion-item>
+</ion-card>
